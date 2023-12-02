@@ -8,16 +8,17 @@ int sol(int n, int m, vector<vector<int>> map){
         int temp=s[0];
         int check=m;
         for(auto a:s){
+            if(check==0) {
+                ans++;
+                break;
+            }
             if(temp==a)
                 check--;
             else{
                 check=m-1;
                 temp=a;
             }
-            if(check==0) {
-                ans++;
-                continue;
-            }
+            
         }
     }
 
@@ -25,16 +26,17 @@ int sol(int n, int m, vector<vector<int>> map){
         int temp=map[0][i];
         int check=m;
         for(int j=0;j<n;j++){
+            if(check==0) {
+                ans++;
+                break;
+            }
             if(temp==map[j][i])
                 check--;
             else{
                 check=m-1;
                 temp=map[j][i];
             }
-            if(check==0) {
-                ans++;
-                continue;
-            }
+            
         }
     }
 
